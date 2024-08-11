@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: DOCKER-SERVICE
+
+  datasource:
+    # DB_HOST USED FOR ENVIRONMENT VARIABLE
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/microservices
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+springdoc:
+  api-docs:
+    path=/api-docs:
